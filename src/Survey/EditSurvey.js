@@ -20,7 +20,7 @@ const EditSurvey = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8800/employee/${_id}`, {
+        fetch(`https://employment-survey-portal-backend.onrender.com/employee/${_id}`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -32,7 +32,7 @@ const EditSurvey = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:8800/sector`, {
+        fetch(`https://employment-survey-portal-backend.onrender.com/sector`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -61,7 +61,7 @@ const EditSurvey = () => {
              email:user.email
         }
 
-        fetch(`http://localhost:8800/employee/${_id}`, {
+        fetch(`https://employment-survey-portal-backend.onrender.com/employee/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -93,7 +93,7 @@ const EditSurvey = () => {
             </Form.Group>
                 <label className='mb-2'>Sectors</label>
                 <br></br>
-                <select className="sector" value={sectorName} onChange={handleChange}  required>
+                <select  id="txtTitle" class="form-control" value={sectorName} onChange={handleChange}  required>
                     {employee.sector ?<option >{employee?.sector}:Select Your Sector</option>:<option> </option>}
                     <optgroup label="Manufacturing">
                         {sectorList.slice(0, 2).map(sector => (

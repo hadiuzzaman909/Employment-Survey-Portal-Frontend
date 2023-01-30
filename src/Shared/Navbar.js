@@ -1,5 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
+import { Button } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../firebase.init';
@@ -21,14 +22,12 @@ const Navbar = () => {
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         </ul>
-                        {/* <div class="d-flex me-3" >
-                            <Link to="/home"><p class="">Home</p></Link>
-                        </div> */}
-            <div class="d-flex me-3" >
-            {         user ?<button type="button" className='btn btn-link sign-out text-decoration-none' onClick={handleSignOut}>Sign Out</button>:<Link to="/login"><button class="btn btn-outline-success" type="submit">Login</button></Link>}
+                        <div class="d-flex me-3" >
+                            {user ? <button type="button" className='btn btn-link sign-out text-decoration-none' onClick={handleSignOut}>Sign Out</button> : <Link to="/login"><button class="btn btn-outline-success" type="submit">Login</button></Link>}
                         </div>
                         <div class="d-flex " >
-                            <Link to="/register"><button class="btn btn-success" type="submit">Sign Up</button></Link>
+                            <Button className='signUpBtn' variant="" type="button"><Link className='text-light btn-link' to='/register'>Sign Up</Link>
+                            </Button>
                         </div>
                     </div>
                 </div>
