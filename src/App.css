@@ -36,3 +36,54 @@
     transform: rotate(360deg);
   }
 }
+
+.survey-form{
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+  height:fit-content;
+  width:450px;
+  padding: 20px;
+}
+.sector{
+  width: 420px;
+  border-radius: 10px;
+  height: 30px;
+}
+.loginBtn{
+  width: 100px;
+  height: 40px;
+  background-color: rgb(107, 221, 241);
+}
+.loginBtn:hover{
+  width: 100px;
+  height: 40px;
+  background-color: rgb(107, 221, 241);
+}
+
+.signUpBtn{
+  width: 100px;
+  height: 40px;
+  background-color: rgb(85, 135, 221);
+
+}
+.signUpBtn:hover{
+  width: 100px;
+  height: 40px;
+  background-color: rgb(85, 135, 221);
+  
+}
+
+.sign-out{
+  background-color: rgb(203, 58, 58);
+  color: whitesmoke;
+}
+
+.home{
+  margin-top: 100px;
+}
+
+@media only screen and (max-width:576px) {
+  .newPortal{
+display: none;
+  }
+}

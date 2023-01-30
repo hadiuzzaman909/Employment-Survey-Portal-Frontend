@@ -1,0 +1,22 @@
+@media only screen and (max-width:576px) {
+    .google{
+        display: none;
+    }
+    .github{
+        display: none;;
+    }
+    .social-media-signin{
+        display: flex;
+        justify-content: center;
+    }
+    .google-button{
+        width:50px !important;
+        margin-right: 10px!important;
+    }
+    .social-div{
+        margin-left: 20px !important;
+    }
+    .github-button{
+        width:50px !important;
+    }
+}
