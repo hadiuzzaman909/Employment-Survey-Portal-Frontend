@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Button, Form} from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import {ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import auth from '../firebase.init';
@@ -12,8 +12,7 @@ const EditSurvey = () => {
     const [sectorName, setSectorName] = useState("")
     const [sectorList, setSectorList] = useState([{ 'sector': '', 'id': '' }])
     const [user] = useAuthState(auth);
-    const [sector,setSector]=useState(" ")
-
+    const navigate=useNavigate();
 
     const [employee,setEmployee]=useState("");
     console.log(employee);
@@ -74,12 +73,16 @@ const EditSurvey = () => {
                 if (result) {
                     toast.success("Successfully Edited!");
                     setEmployee("");
+                    navigate('/survey-details/')
                 }
                 else {
                     toast.error("Does not Successful !");
                 }
             });
 
+
+
+            
     }
     return (
         <div>
@@ -94,7 +97,7 @@ const EditSurvey = () => {
                 <label className='mb-2'>Sectors</label>
                 <br></br>
                 <select  id="txtTitle" class="form-control" value={sectorName} onChange={handleChange}  required>
-                    {employee.sector ?<option >{employee?.sector}:Select Your Sector</option>:<option> </option>}
+                    {employee.sector ?<option >{employee?.sector}</option>:<option> </option>}
                     <optgroup label="Manufacturing">
                         {sectorList.slice(0, 2).map(sector => (
                             <option className="ml-3" value={sector.sector} key={sector.id} >{sector.sector}</option>

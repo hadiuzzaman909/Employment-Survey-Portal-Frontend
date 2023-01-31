@@ -20,7 +20,7 @@ const SurveyForm = () => {
     console.log(employee);
 
     useEffect(() => {
-        fetch(`https://employment-survey-portal-backend.onrender.com/sector`, {
+        fetch(`http://localhost:8800/sector`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const SurveyForm = () => {
              email:user.email
         }
 
-        fetch('https://employment-survey-portal-backend.onrender.com/employee', {
+        fetch('http://localhost:8800/employee', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -95,8 +95,8 @@ const SurveyForm = () => {
                 </Form.Group>
                     <label className='mb-2'>Sectors</label>
                     <br></br>
-                    <select  id="txtTitle" class="form-control" value={sectorName} onChange={handleChange}  required>
-                        {sector ?<option >{sector}:Select Your Sector</option>:<option>Select Your Sector</option>}
+                    <select className="sector" value={sectorName} onChange={handleChange}  required>
+                        {sector ?<option >{sector}:Select Your Sector</option>:<option></option>}
                         <optgroup label="Manufacturing">
                             {sectorList.slice(0, 2).map(sector => (
                                 <option className="ml-3" value={sector.sector} key={sector.id} >{sector.sector}</option>

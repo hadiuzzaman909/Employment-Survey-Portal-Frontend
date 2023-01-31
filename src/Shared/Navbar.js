@@ -23,6 +23,9 @@ const Navbar = () => {
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         </ul>
                         <div class="d-flex me-3" >
+                            {user ? <Link to='survey-details'><button type="button" className='btn btn-link text-dark text-decoration-none' >Survey Details</button> </Link> : <span/>}
+                        </div>
+                        <div class="d-flex me-3" >
                             {user ? <button type="button" className='btn btn-link sign-out text-decoration-none' onClick={handleSignOut}>Sign Out</button> : <Link to="/login"><button class="btn btn-outline-success" type="submit">Login</button></Link>}
                         </div>
                         <div class="d-flex " >

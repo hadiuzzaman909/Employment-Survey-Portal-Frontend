@@ -7,6 +7,8 @@ import RequireAuth from './Authentication/RequireAuth/RequireAuth';
 import SurveyForm from './Survey/SurveyForm';
 import Home from './Home/Home';
 import EditSurvey from './Survey/EditSurvey';
+import Footer from './Shared/Footer';
+import SurveyDetails from './Survey/SurveyDetails';
 
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
        
        <Routes>
        <Route path="/" element={<Home ></Home>}></Route>
+       <Route path="/survey-details" element={<SurveyDetails/>}></Route>
        <Route path='/survey-form' element={
         <RequireAuth>
         <SurveyForm></SurveyForm>
@@ -25,7 +28,7 @@ function App() {
        <Route path='/register' element={<Register></Register>}></Route>
        <Route path='/survey-edit-form/:_id' element={<EditSurvey></EditSurvey>}></Route>
        </Routes>
-
+       <Footer></Footer>
     </div>
   );
 }
