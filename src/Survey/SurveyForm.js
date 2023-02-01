@@ -20,7 +20,7 @@ const SurveyForm = () => {
     console.log(employee);
 
     useEffect(() => {
-        fetch(`http://localhost:8800/sector`, {
+        fetch(`https://employment-survey-portal-backend.onrender.com/sector`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const SurveyForm = () => {
              email:user.email
         }
 
-        fetch('http://localhost:8800/employee', {
+        fetch('https://employment-survey-portal-backend.onrender.com/employee', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

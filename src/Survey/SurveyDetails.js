@@ -5,7 +5,7 @@ const SurveyDetails = () => {
     const [surveyList, setSurveyList] = useState([{ 'sector': '', 'id': '' }])
     console.log(surveyList)
     useEffect(() => {
-        fetch(`http://localhost:8800/employee`, {
+        fetch(`https://employment-survey-portal-backend.onrender.com/employee`, {
             method: 'GET',
             headers: {
                 "Content-Type": "application/json",
